@@ -1,0 +1,126 @@
+.container {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    max-width: 800px;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 100px;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.description strong {
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+.primaryBtn,
+.secondaryBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.primaryBtn {
+    background: var(--primary);
+    color: white;
+}
+
+.primaryBtn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.secondaryBtn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--foreground);
+}
+
+.secondaryBtn:hover {
+    border-color: var(--foreground);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.backgroundGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,27 +1,27 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #0f172a;
+  /* Slate 900 */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+  --primary: #3b82f6;
+  /* Blue 500 */
+  --primary-hover: #2563eb;
+  /* Blue 600 */
+  --accent: #60a5fa;
+  /* Blue 400 (or slightly lighter/cyan/purple for gradient) */
+  --accent-glow: rgba(96, 165, 250, 0.5);
+  --card: #1e293b;
+  /* Slate 800 */
+  --card-border: #334155;
+  /* Slate 700 */
+  --text-muted: #94a3b8;
+  /* Slate 400 */
+  --radius: 8px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
 }
 
 * {
@@ -30,13 +30,42 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  /* The font family is handled via next/font in layout.tsx but set variable here for reference if needed */
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  color: var(--primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
